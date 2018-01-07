@@ -66,6 +66,9 @@ export default {
 <style>
 .vue-world-map {
   height: 100%;
-  width: 100%;
+}
+
+#map-svg {
+  height: 100%;
 }
 </style>

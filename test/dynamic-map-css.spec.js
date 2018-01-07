@@ -8,7 +8,7 @@ describe('getDynamicMapCss', () => {
   const fakeChromaScale = (scaleValue) => {
     return {
       hex: () => `${scaleValue} hex`,
-    }
+    };
   };
 
   const countyData = {
@@ -39,7 +39,7 @@ describe('getBaseCss', () => {
     countryStrokeColor: 'bar',
   };
 
-  const expectedResult = `.vue-world-map .land {fill:foo;stroke:bar;}`
+  const expectedResult = `.vue-world-map .land{fill:foo;stroke:bar;}`
   const result = getBaseCss(props);
 
   it('should return the css string', () => {
