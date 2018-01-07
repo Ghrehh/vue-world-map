@@ -1,0 +1,8 @@
+{
+  "env": {
+    "test": {
+      "plugins": ["transform-vue-jsx", "transform-es2015-modules-commonjs", ]
+    }
+  }
+}
+
