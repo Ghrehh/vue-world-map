@@ -1,11 +1,12 @@
 {
   "name": "vue-world-map",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "src/App.vue",
   "scripts": {
     "test": "jest --config jest.conf.js",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "lint": "eslint --ext .js,.vue src test"
   },
   "publishConfig": {
     "access": "public"
@@ -16,9 +17,17 @@
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
+    "babel-eslint": "^7.1.1",
     "babel-jest": "^22.0.4",
     "babel-loader": "^7.1.1",
     "css-loader": "^0.28.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.3.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-import-resolver-webpack": "^0.8.3",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-html": "^3.0.0",
+    "eslint-plugin-import": "^2.7.0",
     "jest": "^22.0.4",
     "vue-jest": "^1.4.0",
     "vue-loader": "^13.3.0"

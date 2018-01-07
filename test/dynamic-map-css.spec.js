@@ -5,18 +5,16 @@ import {
 } from '@/dynamic-map-css';
 
 describe('getDynamicMapCss', () => {
-  const fakeChromaScale = (scaleValue) => {
-    return {
-      hex: () => `${scaleValue} hex`,
-    };
-  };
+  const fakeChromaScale = (scaleValue) => ({
+    hex: () => `${scaleValue} hex`,
+  });
 
   const countyData = {
-    "US": 4,
-    "CA": 7,
-    "UK": 8,
-    "IE": 14,
-    "unknown": 1337,
+    US: 4,
+    CA: 7,
+    UK: 8,
+    IE: 14,
+    unknown: 1337,
   };
 
   const expectedResult = [
@@ -39,7 +37,7 @@ describe('getBaseCss', () => {
     countryStrokeColor: 'bar',
   };
 
-  const expectedResult = `.vue-world-map .land{fill:foo;stroke:bar;}`
+  const expectedResult = '.vue-world-map .land{fill:foo;stroke:bar;}';
   const result = getBaseCss(props);
 
   it('should return the css string', () => {
