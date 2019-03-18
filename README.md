@@ -20,7 +20,7 @@ object formatted like so.
 {
   US: 100,
   CA: 120,
-  UK: 400,
+  GB: 400,
 }
 ```
 
