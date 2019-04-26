@@ -12,7 +12,7 @@ describe('getDynamicMapCss', () => {
   const countyData = {
     US: 4,
     CA: 7,
-    UK: 8,
+    GB: 8,
     IE: 14,
     unknown: 1337,
   };
@@ -20,7 +20,7 @@ describe('getDynamicMapCss', () => {
   const expectedResult = [
     '.vue-world-map #US { fill: 0 hex; }',
     '.vue-world-map #CA { fill: 0.30000000000000004 hex; }',
-    '.vue-world-map #UK { fill: 0.4 hex; }',
+    '.vue-world-map #GB { fill: 0.4 hex; }',
     '.vue-world-map #IE { fill: 1 hex; }',
   ];
 
