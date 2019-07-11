@@ -1,26 +1,14 @@
 <template>
-<div class="vue-world-map">
-  <Map />
-</div>
+  <div class="vue-world-map" :style="mapStyle">
+    <Map :country-data="countryData" :low-color="lowColor" :high-color="highColor"/>
+  </div>
 </template>
 
 <script>
-import chroma from 'chroma-js';
 import Map from './Map';
-import {
-  getDynamicMapCss,
-  getBaseCss,
-  getCombinedCssString,
-} from './dynamic-map-css';
-
 
 export default {
   components: { Map },
-  watch: {
-    countryData() {
-      this.renderMapCSS();
-    },
-  },
   props: {
     lowColor: {
       type: String,
@@ -43,36 +31,21 @@ export default {
       default: 'black',
     },
   },
-  data() {
-    return {
-      node: document.createElement('style'),
-      chromaScale: chroma.scale([this.$props.lowColor, this.$props.highColor]),
-    };
-  },
+
   methods: {
-    renderMapCSS() {
-      console.log(this.countryData);
-      const baseCss = getBaseCss(this.$props);
-      const dynamicMapCss = getDynamicMapCss(this.$props.countryData, this.chromaScale);
-      this.$data.node.innerHTML = getCombinedCssString(baseCss, dynamicMapCss);
+    mapStyle() {
+      return `fill:${this.defaultCountryFillColor};stroke:${this.countryStrokeColor};`;
     },
-  },
-  mounted() {
-    document.body.appendChild(this.$data.node);
-    this.renderMapCSS();
-  },
-  updated() {
-    this.renderMapCSS();
   },
 };
 </script>
 
 <style>
-.vue-world-map {
-  height: 100%;
-}
+  .vue-world-map {
+    height: 100%;
+  }
 
-#map-svg {
-  height: 100%;
-}
+  #map-svg {
+    height: 100%;
+  }
 </style>
