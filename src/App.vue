@@ -60,6 +60,9 @@ export default {
     document.body.appendChild(this.$data.node);
     this.renderMapCSS();
   },
+  updated() {
+    this.renderMapCSS();
+  },
 };
 </script>
 
