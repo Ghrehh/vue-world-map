@@ -51,6 +51,7 @@ export default {
   },
   methods: {
     renderMapCSS() {
+      console.log(this.countryData);
       const baseCss = getBaseCss(this.$props);
       const dynamicMapCss = getDynamicMapCss(this.$props.countryData, this.chromaScale);
       this.$data.node.innerHTML = getCombinedCssString(baseCss, dynamicMapCss);
