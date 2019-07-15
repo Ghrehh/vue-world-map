@@ -1,7 +1,7 @@
 import {
   getColorScaleUnit,
   getMaxAndMinCountryDataValues,
-} from '@/dynamic-map-css';
+} from '@/dynamic-map-helpers';
 
 describe(getColorScaleUnit, () => {
   const min = 4;

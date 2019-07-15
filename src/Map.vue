@@ -194,7 +194,7 @@ import chroma from 'chroma-js';
 import {
   getColorScaleUnit,
   getMaxAndMinCountryDataValues,
-} from './dynamic-map-css';
+} from './dynamic-map-helpers';
 
 export default {
   props: {
