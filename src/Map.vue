@@ -194,7 +194,7 @@ import chroma from 'chroma-js';
 import {
   getColorScaleUnit,
   getMaxAndMinCountryDataValues,
-} from './dynamic-map-css';
+} from './dynamic-map-helpers';
 
 export default {
   props: {
@@ -229,9 +229,6 @@ export default {
       const value = this.countryData[countryCode];
       const scaleValue = colorScaleUnit * (value - min);
 
-      if (countryCode === 'RU') {
-        debugger;
-      }
       return `fill: ${this.chromaScale(scaleValue).hex()}`;
     },
   },
