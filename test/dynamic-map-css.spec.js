@@ -1,14 +1,21 @@
 import {
-  getDynamicMapCss,
-  getBaseCss,
-  getCombinedCssString,
+  getColorScaleUnit,
+  getMaxAndMinCountryDataValues,
 } from '@/dynamic-map-css';
 
-describe('getDynamicMapCss', () => {
-  const fakeChromaScale = (scaleValue) => ({
-    hex: () => `${scaleValue} hex`,
-  });
+describe(getColorScaleUnit, () => {
+  const min = 4;
+  const max = 14;
 
+  const expectedResult = 0.1;
+  const result = getColorScaleUnit(min, max);
+
+  it('should return the correct scaling', () => {
+    expect(result).toEqual(expectedResult);
+  });
+});
+
+describe(getMaxAndMinCountryDataValues, () => {
   const countyData = {
     US: 4,
     CA: 7,
@@ -17,41 +24,14 @@ describe('getDynamicMapCss', () => {
     unknown: 1337,
   };
 
-  const expectedResult = [
-    '.vue-world-map #US { fill: 0 hex; }',
-    '.vue-world-map #CA { fill: 0.30000000000000004 hex; }',
-    '.vue-world-map #GB { fill: 0.4 hex; }',
-    '.vue-world-map #IE { fill: 1 hex; }',
-  ];
-
-  const result = getDynamicMapCss(countyData, fakeChromaScale);
-
-  it('should return the correct hex values', () => {
-    expect(result).toEqual(expectedResult);
-  });
-});
-
-describe('getBaseCss', () => {
-  const props = {
-    defaultCountryFillColor: 'foo',
-    countryStrokeColor: 'bar',
+  const expectedResult = {
+    min: 4,
+    max: 14,
   };
 
-  const expectedResult = '.vue-world-map .land{fill:foo;stroke:bar;}';
-  const result = getBaseCss(props);
+  const result = getMaxAndMinCountryDataValues(countyData);
 
-  it('should return the css string', () => {
-    expect(result).toEqual(expectedResult);
-  });
-});
-
-describe('getCombinedCssString', () => {
-  const baseCss = 'foo';
-  const dynamicCss = ['bar', 'baz'];
-  const expectedResult = 'bar baz foo';
-  const result = getCombinedCssString(baseCss, dynamicCss);
-
-  it('should return the combined css string', () => {
+  it('should return the min and max country values', () => {
     expect(result).toEqual(expectedResult);
   });
 });
