@@ -37,6 +37,15 @@ numerical value associated with it.
 | highColor | Countries with higher values will be colored more strongly with this color | yes |
 | defaultCountryFillColor | Countries with no data will default to this color | yes |
 | countryStrokeColor | The color of the border around countries | yes |
-| mouseenter | Event listener for mouse entering the country's border | no
-| mouseleave | Event listener for mouse leaving the country's border | no
 
+## Hover Events
+
+The component emits the event `mouseenter` when the mouse enters a country's border, with the country's node as the payload.  
+Similarly the component also emits the `mouseleave` event when the mouse leaves the country's border.   
+Together, these two events can be used for hover actions, or displaying additional data on hover.
+
+Use then in your component as:  
+``` javascript
+  <vueWorldMap :countryData="stats.group_by_country" @mouseleave="on_mouseleave" @mouseenter="on_mouseenter" />
+```
+where `on_mouseenter` and `on_mouseleave` are defined among the methods of your component.
