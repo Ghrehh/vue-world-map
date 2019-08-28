@@ -1,6 +1,6 @@
 <template>
 <div class="vue-world-map">
-  <Map />
+  <Map @mouseenter="on_mouseenter" @mouseleave="on_mouseleave" />
 </div>
 </template>
 
@@ -50,6 +50,12 @@ export default {
     };
   },
   methods: {
+    on_mouseenter(e) {
+      this.$emit("mouseenter", e);
+    },
+    on_mouseleave(e) {
+      this.$emit("mouseleave", e);
+    },
     renderMapCSS() {
       const baseCss = getBaseCss(this.$props);
       const dynamicMapCss = getDynamicMapCss(this.$props.countryData, this.chromaScale);

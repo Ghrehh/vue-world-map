@@ -188,3 +188,21 @@
 	</g>
 </svg>
 </template>
+
+
+<script>
+export default {
+  mounted() {
+    var paths = document.getElementsByClassName("land");
+    var vm = this;
+    Array.from(paths).forEach(function(p) {
+      p.addEventListener("mouseenter", function(e) {
+        vm.$emit("mouseenter", this);
+      });
+      p.addEventListener("mouseleave", function() {
+        vm.$emit("mouseleave", this);
+      });
+    });
+  }
+};
+</script>
