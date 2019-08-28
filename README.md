@@ -37,3 +37,6 @@ numerical value associated with it.
 | highColor | Countries with higher values will be colored more strongly with this color | yes |
 | defaultCountryFillColor | Countries with no data will default to this color | yes |
 | countryStrokeColor | The color of the border around countries | yes |
+| mouseenter | Event listener for mouse entering the country's border | no
+| mouseleave | Event listener for mouse leaving the country's border | no
+
