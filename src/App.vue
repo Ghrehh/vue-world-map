@@ -51,10 +51,10 @@ export default {
   },
   methods: {
     on_mouseenter(e) {
-      this.$emit("mouseenter", e);
+      this.$emit('mouseenter', e);
     },
     on_mouseleave(e) {
-      this.$emit("mouseleave", e);
+      this.$emit('mouseleave', e);
     },
     renderMapCSS() {
       const baseCss = getBaseCss(this.$props);
