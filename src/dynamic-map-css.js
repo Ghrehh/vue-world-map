@@ -13,7 +13,7 @@ const getMaxAndMinCountryDataValues = (countryData) => {
     if (value < min || min === undefined) min = value;
     if (value > max || max === undefined) max = value;
   });
-  
+
   // check if min and max is equal
   // this happens if the country data is only 1
   if (max === min) {
