@@ -62,13 +62,13 @@ export default {
       const dynamicMapCss = getDynamicMapCss(this.$props.countryData, this.chromaScale);
       this.$data.node.innerHTML = getCombinedCssString(baseCss, dynamicMapCss);
     },
-    colorGradient(){
+    colorGradient() {
       const colorBar = document.getElementById('color_bar');
-      const prefixes = ['', '-o-', '-ms-', '-moz-', '-webkit-']
-      for (let x in prefixes){
-        colorBar.style.background = `${prefixes[x]}linear-gradient(to right, ${this.lowColor}, ${this.highColor})`
+      const prefixes = ['', '-o-', '-ms-', '-moz-', '-webkit-'];
+      for (let x = 0; x < prefixes.length; x += 1) {
+        colorBar.style.background = `${prefixes[x]}linear-gradient(to right, ${this.lowColor}, ${this.highColor})`;
       }
-    }
+    },
   },
   mounted() {
     document.body.appendChild(this.$data.node);
