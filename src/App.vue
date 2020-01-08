@@ -1,5 +1,6 @@
 <template>
 <div class="vue-world-map">
+  <div id="color_bar"></div>
   <Map @mouseenter="on_mouseenter" @mouseleave="on_mouseleave" />
 </div>
 </template>
@@ -61,6 +62,13 @@ export default {
       const dynamicMapCss = getDynamicMapCss(this.$props.countryData, this.chromaScale);
       this.$data.node.innerHTML = getCombinedCssString(baseCss, dynamicMapCss);
     },
+    colorGradient(){
+      const colorBar = document.getElementById('color_bar');
+      const prefixes = ['', '-o-', '-ms-', '-moz-', '-webkit-']
+      for (let x in prefixes){
+        colorBar.style.background = `${prefixes[x]}linear-gradient(to right, ${this.lowColor}, ${this.highColor})`
+      }
+    }
   },
   mounted() {
     document.body.appendChild(this.$data.node);
@@ -76,5 +84,25 @@ export default {
 
 #map-svg {
   height: 100%;
+}
+
+#color_bar {
+  width: 100%;
+  height: 5%;
+  margin: auto;
+}
+
+#color_bar::before {
+  position: relative;
+  top: 100%;
+  left:5%;
+  content: "Low"
+}
+
+#color_bar::after {
+  position: relative;
+  top: 100%;
+  left:85%;
+  content: "High"
 }
 </style>
