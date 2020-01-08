@@ -73,6 +73,7 @@ export default {
   mounted() {
     document.body.appendChild(this.$data.node);
     this.renderMapCSS();
+    this.colorGradient();
   },
 };
 </script>
