@@ -1,12 +1,12 @@
 # Vue World Map
 
-A Vue JS Component for displaying dynamic data on a world map.
+A Vue JS Component for displaying dynamic data on a world map. Forked from [Ghrehh's vue-world-map](https://github.com/Ghrehh/vue-world-map)
 
 Map from [amCharts](https://www.amcharts.com/svg-maps/?map=world)
 
 ## Installation
 
-Install via npm using `npm install vue-world-map`
+Install via npm using `npm install vue-world-map-ms`
 
 ## Usage
 
@@ -37,6 +37,7 @@ numerical value associated with it.
 | highColor | Countries with higher values will be colored more strongly with this color | yes |
 | defaultCountryFillColor | Countries with no data will default to this color | yes |
 | countryStrokeColor | The color of the border around countries | yes |
+| showColorBar | Boolean. Deciedes whether to show a color bar displaying the low and the high colors, or not. Defaults to true | yes |
 
 ## Hover Events
 
@@ -49,3 +50,4 @@ Use then in your component as:
   <vueWorldMap :countryData="stats.group_by_country" @mouseleave="on_mouseleave" @mouseenter="on_mouseenter" />
 ```
 where `on_mouseenter` and `on_mouseleave` are defined among the methods of your component.
+

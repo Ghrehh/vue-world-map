@@ -1,6 +1,6 @@
 <template>
 <div class="vue-world-map">
-  <div id="color_bar"></div>
+  <div :v-if="showColorBar" id="color_bar"></div>
   <Map @mouseenter="on_mouseenter" @mouseleave="on_mouseleave" />
 </div>
 </template>
@@ -23,6 +23,10 @@ export default {
     },
   },
   props: {
+    showColorBar: {
+      type: Boolean,
+      default: true,
+    },
     lowColor: {
       type: String,
       default: '#fde2e2',
