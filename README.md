@@ -51,3 +51,4 @@ Use then in your component as:
 ```
 where `on_mouseenter` and `on_mouseleave` are defined among the methods of your component.
 
+Both `on_mouseenter` and `on_mouseleave` return the `country's ISO 3166 Code`, using which the value can be found from the countryData property

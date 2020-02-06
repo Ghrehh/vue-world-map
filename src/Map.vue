@@ -197,10 +197,10 @@ export default {
     const vm = this;
     Array.from(paths).forEach(p => {
       p.addEventListener('mouseenter', () => {
-        vm.$emit('mouseenter', this);
+        vm.$emit('mouseenter', p.id);
       });
       p.addEventListener('mouseleave', () => {
-        vm.$emit('mouseleave', this);
+        vm.$emit('mouseleave', p.id);
       });
     });
   },
