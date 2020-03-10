@@ -1,6 +1,6 @@
 <template>
 <div class="vue-world-map">
-  <div :v-if="showColorBar" id="color_bar"></div>
+  <div v-if="showColorBar" id="color_bar"></div>
   <Map @mouseenter="on_mouseenter" @mouseleave="on_mouseleave" />
 </div>
 </template>
