@@ -24,6 +24,18 @@ object formatted like so.
 }
 ```
 
+For Individual Countries pass the ISO 3166 Code to the `map` prop. for US the values for the states can be set like this:
+
+``` javascript
+{
+  US_CA: 100,
+  CA_NY: 120,
+  UK_TX: 400,
+}
+```
+
+note: Only US country map is available.
+
 Where the key is a country's
 [ISO 3166 Code](https://en.wikipedia.org/wiki/ISO_3166) and the value is a
 numerical value associated with it.
