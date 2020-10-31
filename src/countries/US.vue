@@ -1,9 +1,6 @@
 <template>
 <!-- (c) ammap.com | SVG map of World - Low -->
-<svg id="map-svg" xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" viewBox="0 0 1500 800">
-	<defs>
-		<amcharts:ammap projection="mercator" leftLongitude="-169.6" topLatitude="83.68" rightLongitude="190.25" bottomLatitude="-55.55"></amcharts:ammap>
-	</defs>
+<svg id="map-svg" xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" viewBox="120 0 1105 760">
 	<g>
 		<path
 			id="US_AK"
