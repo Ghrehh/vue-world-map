@@ -1,4 +1,5 @@
 # This is no longer being maintained, please do not open issues or PRs.
+# This package is implemented in a really stupid way and I wouldn't recommend using it, you should probably use a different library or just copy the map SVG out of this and create your own.
 
 # Vue World Map
 
