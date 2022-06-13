@@ -1,12 +1,14 @@
 <template>
 <div class="vue-world-map">
-  <Map />
+  <Map v-if="map == 'world'" />
+  <US v-if="map === 'US'" />
 </div>
 </template>
 
 <script>
 import chroma from 'chroma-js';
 import Map from './Map';
+import US from './countries/US'
 import {
   getDynamicMapCss,
   getBaseCss,
@@ -15,13 +17,17 @@ import {
 
 
 export default {
-  components: { Map },
+  components: { US, Map },
   watch: {
     countryData() {
       this.renderMapCSS();
     },
   },
   props: {
+    map: {
+      type: String,
+      default: 'world'
+    },
     lowColor: {
       type: String,
       default: '#fde2e2',
