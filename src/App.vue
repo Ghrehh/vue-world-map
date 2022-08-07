@@ -1,6 +1,7 @@
 <template>
 <div class="vue-world-map">
-  <Map />
+  <div v-if="showColorBar" id="color_bar"></div>
+  <Map @mouseenter="on_mouseenter" @mouseleave="on_mouseleave" />
 </div>
 </template>
 
@@ -22,6 +23,10 @@ export default {
     },
   },
   props: {
+    showColorBar: {
+      type: Boolean,
+      default: true,
+    },
     lowColor: {
       type: String,
       default: '#fde2e2',
@@ -50,15 +55,29 @@ export default {
     };
   },
   methods: {
+    on_mouseenter(e) {
+      this.$emit('mouseenter', e);
+    },
+    on_mouseleave(e) {
+      this.$emit('mouseleave', e);
+    },
     renderMapCSS() {
       const baseCss = getBaseCss(this.$props);
       const dynamicMapCss = getDynamicMapCss(this.$props.countryData, this.chromaScale);
       this.$data.node.innerHTML = getCombinedCssString(baseCss, dynamicMapCss);
     },
+    colorGradient() {
+      const colorBar = document.getElementById('color_bar');
+      const prefixes = ['', '-o-', '-ms-', '-moz-', '-webkit-'];
+      for (let x = 0; x < prefixes.length; x += 1) {
+        colorBar.style.background = `${prefixes[x]}linear-gradient(to right, ${this.lowColor}, ${this.highColor})`;
+      }
+    },
   },
   mounted() {
     document.body.appendChild(this.$data.node);
     this.renderMapCSS();
+    this.colorGradient();
   },
 };
 </script>
@@ -70,5 +89,25 @@ export default {
 
 #map-svg {
   height: 100%;
+}
+
+#color_bar {
+  width: 100%;
+  height: 5%;
+  margin: auto;
+}
+
+#color_bar::before {
+  position: relative;
+  top: 100%;
+  left:5%;
+  content: "Low"
+}
+
+#color_bar::after {
+  position: relative;
+  top: 100%;
+  left:85%;
+  content: "High"
 }
 </style>

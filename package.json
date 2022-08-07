@@ -1,7 +1,7 @@
 {
-  "name": "vue-world-map",
-  "version": "0.1.1",
-  "description": "",
+  "name": "vue-world-map-ms",
+  "version": "0.1.3",
+  "description": "A Vue JS component for displaying dynamic data on a world map. Forked from Ghrehh and improved.",
   "main": "src/App.vue",
   "scripts": {
     "test": "jest --config jest.conf.js",
@@ -32,6 +32,6 @@
     "vue-jest": "^1.4.0",
     "vue-loader": "^13.3.0"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Mrityunjay Saxena",
+  "license": "MIT"
 }
