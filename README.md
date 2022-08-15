@@ -13,23 +13,25 @@ Install via npm using `npm install vue-world-map`
 
 ## Usage
 
-This component is most useful in creating a heat map for various countries. And
-will color countries differently based on a props passed.
+This component is most useful when creating a heat map for countries with interpolation between two colors.
 
 The component requires a prop of `countryData` to be passed to it, which is a JS
-object formatted like so.
+object formatted like so:
 
 ``` javascript
 {
   US: 100,
   CA: 120,
   UK: 400,
+  unknown: 999,
 }
 ```
 
 Where the key is a country's
 [ISO 3166 Code](https://en.wikipedia.org/wiki/ISO_3166) and the value is a
 numerical value associated with it.
+
+Keys that have a country code of `unknown` will not have their values parsed.
 
 ## API
 
